@@ -108,6 +108,48 @@ public class MinkuTante {
 				runcis = new Minka(minkasVards, skirne, 
 						spalvasKrasa, saimnieks, dzGads, siksnina, cels);
 				break;
+				
+			case "Izsaukt metodi":
+				if(runcis != null) {
+					String[] metozuSaraksts = {"Paglaudīt", 
+					"Nolasīt atribūtus", "Pabarot", "Nolikt gulēt",
+					"Palielināt vecumu", "Apskatīt vecumu", "Medīt"};
+					
+					String metode = (String) JOptionPane.showInputDialog(null, 
+							"Izvēlies metodi", "Metodes izvēle",
+							JOptionPane.QUESTION_MESSAGE, null, 
+							metozuSaraksts, metozuSaraksts[0]);
+					
+					if(metode == null)
+						break;
+					
+					switch(metode) {
+					case "Paglaudīt":
+						runcis.murrat();
+						break;
+						
+					case "Nolasīt atribūtus":
+						JOptionPane.showMessageDialog(null,
+								runcis.nolasitAtributus(), "Informācija", 
+								JOptionPane.INFORMATION_MESSAGE);
+						break;
+						
+					case "Pabarot":
+						String atbilde = runcis.pabarot(virknesParbaude(
+								"Ar ko pabarosi kaķi?", "Desu"));
+						JOptionPane.showMessageDialog(null, "Kaķis atgriež "
+						+ atbilde, "Informācija",
+						JOptionPane.INFORMATION_MESSAGE);
+						break;
+					}
+					
+				} else 
+					JOptionPane.showMessageDialog(null,
+							"Vispirms izveido kaķi!", "Brīdinājums", 
+							JOptionPane.WARNING_MESSAGE);
+				break;
+				
+				
 			}
 			
 		} while(!izvelne.equals("Aizvērt"));

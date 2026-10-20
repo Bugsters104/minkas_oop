@@ -56,7 +56,7 @@ public class Minka {
 	void murrat() {
 		JOptionPane.showMessageDialog(null, 
 				vards + " saka 'murr murr murr'", "Paziņojums",
-				JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.INFORMATION_MESSAGE, bilde);
 	}
 	
 	String nolasitAtributus() {
